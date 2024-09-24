@@ -1,0 +1,3 @@
+Flask==3.0.3
+Python==3.10.0
+FLask-mysqldb= 1.5.2

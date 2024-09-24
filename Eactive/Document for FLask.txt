@@ -1,0 +1,119 @@
+
+This project is a basic web application  using Flask, a lightweight web framework for Python.
+ It interacts with a MySQL database to manage user information.
+ The application includes the following features
+
+Display all users from the database
+Add new users
+View detailed information for individual users
+
+requirement
+
+Before setting up and running the project, ensure you have the following installed
+
+Python 3.x
+Flask
+MySQL server
+MySQLdb
+Flask-MySQLdb
+
+You can install the necessary Python packages by running the following command
+
+pip install Flask Flask-MySQLdb
+
+Setup Instructions
+
+ Clone the Repositor
+git clone <repository-url>
+cd <repository-directory>
+
+ Install Python Dependencies
+Ensure you have all the necessary dependencies installed.
+
+Flask
+Flask-MySQLdb
+Configure the Database
+The application uses MySQL as the database. You'll need to create a database and configure the application to connect to it.
+
+Create the database:
+
+First log into MySQL and create a new database:
+CREATE DATABASE Users;
+
+USE Users;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(200),
+    email VARCHAR(100),
+    role VARCHAR(150)
+);
+Populate with sample data (optional):
+
+Insert some user data into the users table for testing
+
+INSERT INTO users (name, email, role) VALUES 
+('shivam Mishra', 'shivam@gmail.com', 'software Developer'),
+('Deepak', 'd122@.com', 'UI designer');
+
+ Configure the Application
+Update the application's configuration to point to your MySQL database.
+ Open the config.py file and ensure it contains your database credentials.
+
+ config.py:
+
+ class Config:
+    MYSQL_HOST = 'localhost'
+    MYSQL_USER = 'root'
+    MYSQL_PASSWORD = 'root'
+    MYSQL_DB = 'Users'
+ Running the Application
+Once everything is set up, you can run the Flask development server by executing the following command.
+python app.py
+The application server at http://127.0.0.1:5000.
+
+ Application Routes
+
+/hello - A test route that returns "Hello World!"
+/users - Displays a list of all users in the database.
+/new_user - Allows you to add a new user through a form.
+/users/<id> - Displays the details of a specific user based on their Id.
+
+ Error Handling
+
+A 404 page will return Page not found if the requested page doesn't exist.
+
+ Directory Structure
+
+/project-directory
+    / requirements.txt       # Project dependencies
+           requirement file
+    /template                # Directory containing HTML templates
+        users.html           # Displays the list of users
+        new_user.html        # Form to add a new user
+        user_details.html    # Displays user details
+    config.py                # Application configuration
+   run.py                   # Main application file
+    
+Git Workflow
+Cloning the repository: To begin working on the project, clone the repository:
+
+
+git clone <repository-url>
+Creating a new branch.
+git checkout -b <branch-name>
+ Make your changes in the new branch. Once you're done, stage and commit your changes.
+
+git add .
+git commit -m "Description of changes"
+
+ Push the changes to your branch on the remote repository.
+
+git push origin <branch-name>
+ Once your changes are pushed, create a Pull Request
+ on the remote repository. Be sure to describe your changes clearly
+and link any issues it addresses.
+
+ After submitting the Pull Request, your changes will be reviewed. 
+Once approved, the Pull request will be merged into the main branch.
+
