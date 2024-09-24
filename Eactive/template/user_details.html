@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Details</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
-        <h1 class="text-center alert alert-danger">Python Flask CRUD Application</h1>
-                <div class="row">
-                    <div class="col-sm-2"></div>
+    <div class="container mt-5">
+        <h1 class="text-center text-danger mb-4">Python Flask CRUD Application</h1>
 
-<h1>User Details for {{ user.name }}</h1>
-<p><strong>Email:</strong> {{ user.email }}</p>
-<p><strong>Role:</strong> {{ user.role }}</p>
-<a href="{{ url_for('users') }}">Back to Users List</a>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title">User Details for {{ user.name }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Email:</strong> {{ user.email }}</p>
+                        <p><strong>Role:</strong> {{ user.role }}</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="{{ url_for('users') }}" class="btn btn-secondary">Back to Users List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

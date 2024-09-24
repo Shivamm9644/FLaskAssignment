@@ -1,27 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>New User</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
-        <h1 class="text-center alert alert-danger">Python Flask CRUD Application</h1>
-        <div class="row">
-            <div class="col-sm-2"></div>
+    <div class="container mt-5">
+        <h1 class="text-center text-danger mb-4">Python Flask CRUD Application</h1>
+        
+           
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('new_user') }}">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <input type="text" name="role" id="role" class="form-control" placeholder="Enter role (e.g., admin, user)" required>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-success btn-block">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <h2>Add New User <button class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">Add New Users</button></h2>
-        <form method="POST" action="{{ url_for('new_user') }}">
-            <label for="name">Name:</label>
-            <input type="text" name="name" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" name="email" required><br>
-
-            <label for="role">Role:</label>
-            <input type="text" name="role" required><br>
-
-            <input type="submit" value="Submit">
-        </form>
     </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
